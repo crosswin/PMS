@@ -159,18 +159,28 @@
 }
 
 .hero-header img {
-    animation: imgRotate 50s linear infinite;
+    -moz-animation:h-bounce 2s infinite;
+    -webkit-animation:h-bounce 2s infinite;
+    animation:h-bounce 2s infinite;
 }
 
-@keyframes imgRotate {
-    100% {
-        transform: rotate(360deg);
+@keyframes h-bounce {
+    0%,100%,25%,50%,75% {
+        transform:translateY(0)
+    }
+    40% {
+        transform:translateY(-20px)
+    }
+    80% {
+        transform:translateY(-10px)
     }
 }
 
 .breadcrumb-item+.breadcrumb-item::before {
     color: rgba(255, 255, 255, .5);
 }
+
+
 
 
 /*** Section Title ***/
@@ -211,6 +221,7 @@
 .service-item {
     box-shadow: 0 0 45px rgba(0, 0, 0, .08);
     transition: .5s;
+    height: 250px;
 }
 
 .service-item:hover {
@@ -298,7 +309,7 @@
     position: relative;
     height: 100%;
     min-height: 500px;
-    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/video.jpg);
+    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/video-thumbnail.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -537,4 +548,17 @@
     margin-right: 0;
     padding-right: 0;
     border-right: none;
+}
+
+/* Scrollbar CSS */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background: linear-gradient(180deg, rgba(43, 37, 72, 0.773), rgba(43, 37, 72, 0.463));
 }
